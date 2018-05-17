@@ -25,5 +25,43 @@ namespace ProjetoAdmin.DAO
                 }
             }
         }
+
+        public void EditarUsuario(Usuario usuario)
+        {
+            //Implementar método
+        }
+
+        public void ObterId(int id)
+        {
+            //Implementar método
+        }
+
+        public bool Excluir(int id)
+        {
+            using (SqlConnection conn = new SqlConnection())
+            {
+                conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand(@"
+                    DELETE FROM <nomeTabela>
+                    WHERE UsuarioId = @id", conn))
+
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    return (cmd.ExecuteNonQuery() == 1);
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
     }
 }
