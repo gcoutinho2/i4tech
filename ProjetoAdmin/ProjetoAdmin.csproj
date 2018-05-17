@@ -144,12 +144,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\RevisoesController.cs" />
+    <Compile Include="Controllers\AcessoController.cs" />
+    <Compile Include="DAO\AcessoDAO.cs" />
     <Compile Include="DAO\CarroDAO.cs" />
     <Compile Include="DAO\Conexao.cs" />
     <Compile Include="DAO\RevisaoDAO.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
-    <Compile Include="Models\Revisoes.cs" />
+    <Compile Include="Bean\Acesso.cs" />
     <Compile Include="View\CadastroCliente.aspx.cs">
       <DependentUpon>CadastroCliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -204,8 +205,8 @@
     <Compile Include="View\InformarErro.aspx.designer.cs">
       <DependentUpon>InformarErro.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Carro.cs" />
-    <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Bean\Carro.cs" />
+    <Compile Include="Bean\Usuario.cs" />
     <Compile Include="NavBar.ascx.cs">
       <DependentUpon>NavBar.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -236,6 +237,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
