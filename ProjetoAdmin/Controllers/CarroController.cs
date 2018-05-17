@@ -13,6 +13,7 @@ namespace ProjetoAdmin.Controllers
             carro.InserirCarro(car);
         }
 
+        [HttpGet]
         public Carro ObterPorId(int id)
         {
             CarroDAO carro = new CarroDAO();
