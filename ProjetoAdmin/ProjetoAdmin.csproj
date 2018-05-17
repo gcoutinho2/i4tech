@@ -82,10 +82,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CadastroCliente.aspx" />
-    <Content Include="CadastroUser.aspx" />
-    <Content Include="CadastroVeiculo.aspx" />
-    <Content Include="ConsultarInformacao.aspx" />
+    <Content Include="View\CadastroCliente.aspx" />
+    <Content Include="View\CadastroUser.aspx" />
+    <Content Include="View\CadastroVeiculo.aspx" />
+    <Content Include="View\ConsultarInformacao.aspx" />
     <Content Include="css\bootstrap-datepicker3.min.css" />
     <Content Include="css\bootstrap-social.css" />
     <Content Include="css\bootstrap-theme.css" />
@@ -101,12 +101,12 @@
     <Content Include="css\sb-admin-2.css" />
     <Content Include="css\table.css" />
     <Content Include="css\timeline.css" />
-    <Content Include="Default.aspx" />
+    <Content Include="View\Default.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
-    <Content Include="GerenciarUser.aspx" />
+    <Content Include="View\GerenciarUser.aspx" />
     <Content Include="Global.asax" />
     <Content Include="images\logo-header.png" />
-    <Content Include="InformarErro.aspx" />
+    <Content Include="View\InformarErro.aspx" />
     <Content Include="js\login.js" />
     <Content Include="js\bootstrap-datepicker.min.js" />
     <Content Include="js\bootstrap.js" />
@@ -144,58 +144,61 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="CadastroCliente.aspx.cs">
+    <Compile Include="DAO\CarroDAO.cs" />
+    <Compile Include="DAO\Conexao.cs" />
+    <Compile Include="DAO\UsuarioDAO.cs" />
+    <Compile Include="View\CadastroCliente.aspx.cs">
       <DependentUpon>CadastroCliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CadastroCliente.aspx.designer.cs">
+    <Compile Include="View\CadastroCliente.aspx.designer.cs">
       <DependentUpon>CadastroCliente.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CadastroUser.aspx.cs">
+    <Compile Include="View\CadastroUser.aspx.cs">
       <DependentUpon>CadastroUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CadastroUser.aspx.designer.cs">
+    <Compile Include="View\CadastroUser.aspx.designer.cs">
       <DependentUpon>CadastroUser.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CadastroVeiculo.aspx.cs">
+    <Compile Include="View\CadastroVeiculo.aspx.cs">
       <DependentUpon>CadastroVeiculo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CadastroVeiculo.aspx.designer.cs">
+    <Compile Include="View\CadastroVeiculo.aspx.designer.cs">
       <DependentUpon>CadastroVeiculo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ConsultarInformacao.aspx.cs">
+    <Compile Include="View\ConsultarInformacao.aspx.cs">
       <DependentUpon>ConsultarInformacao.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ConsultarInformacao.aspx.designer.cs">
+    <Compile Include="View\ConsultarInformacao.aspx.designer.cs">
       <DependentUpon>ConsultarInformacao.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\CarroController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
-    <Compile Include="Default.aspx.cs">
+    <Compile Include="View\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
+    <Compile Include="View\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GerenciarUser.aspx.cs">
+    <Compile Include="View\GerenciarUser.aspx.cs">
       <DependentUpon>GerenciarUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GerenciarUser.aspx.designer.cs">
+    <Compile Include="View\GerenciarUser.aspx.designer.cs">
       <DependentUpon>GerenciarUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="InformarErro.aspx.cs">
+    <Compile Include="View\InformarErro.aspx.cs">
       <DependentUpon>InformarErro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="InformarErro.aspx.designer.cs">
+    <Compile Include="View\InformarErro.aspx.designer.cs">
       <DependentUpon>InformarErro.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\Carro.cs" />
