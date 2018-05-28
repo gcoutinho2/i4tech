@@ -62,5 +62,28 @@ namespace ProjetoAdmin.DAO
             }
 
         }
+
+        public void EditarCarro(Carro Carro)
+        {
+            //Implementar método
+        }
+
+        public bool Excluir(int id)
+        {
+            using (SqlConnection conn = new SqlConnection())
+            {
+                conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand(@"
+                    DELETE FROM <nomeTabela>
+                    WHERE CarroId = @id", conn))
+
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    return (cmd.ExecuteNonQuery() == 1);
+                }
+            }
+        }
     }
 }

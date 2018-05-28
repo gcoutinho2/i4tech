@@ -10,30 +10,30 @@ namespace ProjetoAdmin.DAO
 {
     public class AcessoController : ApiController
     {
-        AcessoDAO acesso = new AcessoDAO();
+        AcessoDAO acessoDAO = new AcessoDAO();
 
         [HttpPost]
         public void CadastrarUsuario([FromBody]Acesso acesso)
         {
-            //acesso.InserirUsuario(acesso);
+            acessoDAO.InserirUsuario(acesso);
         }
 
         [HttpPost]
         public void EditarUsuario([FromBody]Acesso acesso)
         {
-            //acesso.EditarUsuario(acesso);
+            acessoDAO.EditarUsuario(acesso);
         }
 
         [HttpGet]
         public void ObterId([FromBody] int id)
         {
-            acesso.ObterId(id);
+            acessoDAO.ObterId(id);
         }
 
         [HttpGet]
         public void Excluir(int id)
         {
-            acesso.Excluir(id);
+            acessoDAO.Excluir(id);
         }
     }
 }

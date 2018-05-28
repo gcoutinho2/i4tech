@@ -31,9 +31,48 @@ namespace ProjetoAdmin.DAO
             //Implementar método
         }
 
-        public void ObterId(int id)
+        public Usuario ObterId(int id)
         {
-            //Implementar método
+            using (SqlConnection conn = Conexao.AbrirConexao())
+            {
+
+                using (SqlCommand cmd = new SqlCommand(@"
+                    SELECT mod.Nome, mont.Nome,car.Ano FROM Carro car INNER JOIN Modelo mod ON car.Id = mod.Id
+                    INNER JOIN Montadora mont ON mont.id = mod.id
+                    WHERE car.Id = @id", conn))
+
+                {
+                    // Esse valor poderia vir de qualquer outro lugar, como uma TextBox...
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        //Obtém os registros, um por vez
+                        if (reader.Read() == true)
+                        {
+
+                            return new Usuario()
+                            {
+                                Id = reader.GetInt32(0),
+                                Cpf = reader.GetString(1),
+                                Nome = reader.GetString(2),
+                                Sobrenome = reader.GetString(3),
+                                NumTelefone = reader.GetString(4),
+                                Rg = reader.GetString(5),
+                                DtaNascimento = reader.GetDateTime(6),
+                                Email = reader.GetString(7),
+                                EmailAlternativo = reader.GetString(8),
+                                Sexo = reader.GetString(9)
+                            };
+
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                }
+            }
         }
 
         public bool Excluir(int id)
