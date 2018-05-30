@@ -233,3 +233,6 @@ C:\workspace\i4Tech\i4tech\ProjetoAdmin\bin\pt-br\System.Web.Http.WebHost.resour
 C:\workspace\i4Tech\i4tech\ProjetoAdmin\obj\Debug\ProjetoAdmin.csprojResolveAssemblyReference.cache
 C:\workspace\i4Tech\i4tech\ProjetoAdmin\obj\Debug\ProjetoAdmin.dll
 C:\workspace\i4Tech\i4tech\ProjetoAdmin\obj\Debug\ProjetoAdmin.pdb
+C:\workspace\i4tech\ProjetoAdmin\obj\Debug\ProjetoAdmin.csprojResolveAssemblyReference.cache
+C:\workspace\i4tech\ProjetoAdmin\obj\Debug\ProjetoAdmin.dll
+C:\workspace\i4tech\ProjetoAdmin\obj\Debug\ProjetoAdmin.pdb
