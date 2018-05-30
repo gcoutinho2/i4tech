@@ -7,6 +7,8 @@ namespace ProjetoAdmin.Models
 {
     public class Acesso
     {
+        public int Id { get; set; }
+
         public string Usuario { get; set; }
 
         public string Email { get; set; }

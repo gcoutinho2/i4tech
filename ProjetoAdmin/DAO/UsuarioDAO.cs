@@ -28,7 +28,23 @@ namespace ProjetoAdmin.DAO
 
         public void EditarUsuario(Usuario usuario)
         {
-            //Implementar método
+            using (SqlConnection conn = Conexao.AbrirConexao())
+            {
+                using (SqlCommand cmd = new SqlCommand("UPDATE Usuario SET Cpf = @cpf, Nome = @nome, Sobrenome = @sobrenome, Num_Telefone = @num_telefone, Rg = @rg, Data_nasc = @data_nasc, Email = @email, Email_alternativo = @email_alternativo, sexo = @sexo  WHERE Id = @id", conn))
+                {
+                    cmd.Parameters.AddWithValue("@cpf", usuario.Cpf);
+                    cmd.Parameters.AddWithValue("@nome", usuario.Nome);
+                    cmd.Parameters.AddWithValue("@sobrenome", usuario.Sobrenome);
+                    cmd.Parameters.AddWithValue("@num_telefone", usuario.NumTelefone);
+                    cmd.Parameters.AddWithValue("@rg", usuario.Rg);
+                    cmd.Parameters.AddWithValue("@data_nasc", usuario.DtaNascimento);
+                    cmd.Parameters.AddWithValue("@email", usuario.Email);
+                    cmd.Parameters.AddWithValue("@email_alternativo", usuario.EmailAlternativo);
+                    cmd.Parameters.AddWithValue("@sexo", usuario.Sexo);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
         public Usuario ObterId(int id)
@@ -82,7 +98,7 @@ namespace ProjetoAdmin.DAO
                 conn.Open();
 
                 using (SqlCommand cmd = new SqlCommand(@"
-                    DELETE FROM <nomeTabela>
+                    DELETE FROM Usuario
                     WHERE UsuarioId = @id", conn))
 
                 {

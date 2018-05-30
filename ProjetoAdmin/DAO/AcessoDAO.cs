@@ -13,7 +13,7 @@ namespace ProjetoAdmin.DAO
         {
             using (SqlConnection conn = Conexao.AbrirConexao())
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO Acesso ( usuario, email, senha, confirma_senha) VALUES ( @usuario, @email, @senha, @confirma_senha)", conn))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Acesso ( Usuario, Email, Senha, Confirma_senha) VALUES ( @usuario, @email, @senha, @confirma_senha)", conn))
                 {
                     cmd.Parameters.AddWithValue("@usuario", acesso.Usuario);
                     cmd.Parameters.AddWithValue("@email", acesso.Email);
@@ -27,7 +27,18 @@ namespace ProjetoAdmin.DAO
 
         public void EditarUsuario(Acesso acesso)
         {
-            //Implementar método
+            using (SqlConnection conn = Conexao.AbrirConexao())
+            {
+                using (SqlCommand cmd = new SqlCommand("UPDATE Acesso SET Usuario = @usuario, Email = @email, Senha = @senha, Confirma_senha = @confirma_senha WHERE Id = @id", conn))
+                {
+                    cmd.Parameters.AddWithValue("@usuario", acesso.Usuario);
+                    cmd.Parameters.AddWithValue("@email", acesso.Email);
+                    cmd.Parameters.AddWithValue("@senha", acesso.Senha);
+                    cmd.Parameters.AddWithValue("@confirma_senha", acesso.ConfirmaSenha);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
         public Acesso ObterId(int id)
@@ -74,7 +85,7 @@ namespace ProjetoAdmin.DAO
             {
                 //Arrumar a QueryString
                 using (SqlCommand cmd = new SqlCommand(@"
-                    DELETE FROM <nomeTabela>
+                    DELETE FROM Acesso
                     WHERE AcessoId = @id", conn))
 
                 {

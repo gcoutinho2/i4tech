@@ -63,9 +63,21 @@ namespace ProjetoAdmin.DAO
 
         }
 
-        public void EditarCarro(Carro Carro)
+        public void EditarCarro(Carro carro)
         {
-            //Implementar método
+            using (SqlConnection conn = Conexao.AbrirConexao())
+            {
+                using (SqlCommand cmd = new SqlCommand("UPDATE Carro SET Modelo = @modelo, Ano = @ano, Km = @km, Cor = @cor, Montadora = @montadora WHERE Id = @id", conn))
+                {
+                    cmd.Parameters.AddWithValue("@usuario", carro.Modelo);
+                    cmd.Parameters.AddWithValue("@email", carro.Ano);
+                    cmd.Parameters.AddWithValue("@senha", carro.Km);
+                    cmd.Parameters.AddWithValue("@confirma_senha", carro.Cor);
+                    cmd.Parameters.AddWithValue("@confirma_senha", carro.Montadora);
+                    
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
         public bool Excluir(int id)
@@ -75,7 +87,7 @@ namespace ProjetoAdmin.DAO
                 conn.Open();
 
                 using (SqlCommand cmd = new SqlCommand(@"
-                    DELETE FROM <nomeTabela>
+                    DELETE FROM Carro
                     WHERE CarroId = @id", conn))
 
                 {
